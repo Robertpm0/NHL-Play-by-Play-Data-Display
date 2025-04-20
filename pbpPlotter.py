@@ -18,6 +18,11 @@ import seaborn as sns
 import plotly.express as px
 import matplotlib
 matplotlib.use("TkAgg")
+
+# INSERT GAME ID HERE
+gameId="2024021307" # replace with game ID you want to use
+
+
 # used to convert string times with the : symbol to seconds
 def TimeConvert(word):
     words=word.split(":")
@@ -61,8 +66,6 @@ def getData(gameId):
 
 
 
-# ENTER YOUR GAME ID HERE FROM OFFICIAL NHL SOURCES
-gameId="2024021307" # replace with game ID you want to use
 req=requests.get(f"https://api-web.nhle.com/v1/gamecenter/{gameId}/play-by-play").json() # get play by play from NHL API
 
 plays=req["plays"] # main data
